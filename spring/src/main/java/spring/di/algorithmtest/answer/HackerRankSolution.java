@@ -1,4 +1,4 @@
-package spring.di.answer;
+package spring.di.algorithmtest.answer;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
+import java.math.BigInteger;
 
 import static java.util.stream.Collectors.toList;
 
@@ -144,5 +145,50 @@ public class HackerRankSolution {
         int result = cResult.diagonalDifference(matrix);
 
         bufferedReader.close();
+    }
+
+    public void process_formingMagicSquare() throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+
+        int[][] s = new int[3][3];
+
+        for (int i = 0; i < 3; i++) {
+            String[] sRowItems = bufferedReader.readLine().split(" ");
+
+            for (int j = 0; j < 3; j++) {
+                int sItem = Integer.parseInt(sRowItems[j]);
+                s[i][j] = sItem;
+            }
+        }
+
+        Result cResult = new Result();
+        int result = cResult.formingMagicSquare(s);
+
+        System.out.println(result);
+
+        bufferedReader.close();
+    }
+
+    public static void process_pickingNumbers() throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+
+        int nCount = Integer.parseInt(bufferedReader.readLine().trim());
+        List<Integer> a = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" ")).map(Integer::parseInt).collect(toList());
+
+        int result = Result.pickingNumbers(a);
+        bufferedReader.close();
+    }
+    
+    public void process_extraLongFactorials() throws IOException{
+    	BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    	System.out.println("input: ");
+    	String num = bufferedReader.readLine();
+
+    	Result cResult = new Result();
+        cResult.extraLongFactorials(Integer.parseInt(num));
+    	BigInteger f = cResult.factorial(new BigInteger(num));
+        System.out.printf("factorial(%2s) = %20s%n", num, f.toString());
+
+
     }
 }
