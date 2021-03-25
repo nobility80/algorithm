@@ -42,7 +42,11 @@ public class App
       //hackerRankSolution.process_aVeryBigSum();
       //hackerRankSolution.process_diagonalDifference();
       //hackerRankSolution.process_formingMagicSquare();
-      hackerRankSolution.process_extraLongFactorials();
+      //hackerRankSolution.process_extraLongFactorials();
+      //hackerRankSolution.process_MaxCounters();
+      //hackerRankSolution.process_MissingInteger();
+      //hackerRankSolution.process_PermCheck();
+      hackerRankSolution.process_CountDiv();
 
 //      System.out.println("res: " + res);
     }

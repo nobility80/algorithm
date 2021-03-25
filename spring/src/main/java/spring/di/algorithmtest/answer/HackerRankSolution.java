@@ -191,4 +191,71 @@ public class HackerRankSolution {
 
 
     }
+    
+    /*
+     * https://app.codility.com/programmers/lessons/4-counting_elements/max_counters/
+     */
+    public void process_MaxCounters() throws IOException {
+    	BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    	String[] inputStr = bufferedReader.readLine().split(" ");
+    	int[] inputInt = new int[inputStr.length];
+    	int nCount = Integer.parseInt(bufferedReader.readLine());
+    	
+    	for (int i=0; i<inputStr.length; i++) {
+    		inputInt[i] = Integer.parseInt(inputStr[i]);
+    	}
+    	
+    	Result cResult = new Result();
+    	int[] answer = cResult.MaxCounters(nCount, inputInt);
+    	for ( int i=0; i<answer.length; i++) {
+    		System.out.print(answer[i]);
+    	}
+    }
+    
+    /*
+     * https://app.codility.com/programmers/lessons/4-counting_elements/missing_integer/
+     */
+    public void process_MissingInteger() throws IOException {
+    	BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    	String[] inputStr = bufferedReader.readLine().split(" ");
+    	int[] inputInt = new int[inputStr.length];
+    	
+    	for (int i=0; i<inputStr.length; i++) {
+    		inputInt[i] = Integer.parseInt(inputStr[i]);
+    	}
+    	
+    	Result cResult = new Result();
+    	int answer = cResult.MissingInteger(inputInt);
+    	System.out.print(answer);
+    }
+    
+    /*
+     * https://app.codility.com/programmers/lessons/4-counting_elements/perm_check/
+     */
+    public void process_PermCheck() throws IOException {
+    	BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    	String[] inputStr = bufferedReader.readLine().split(" ");
+    	int[] inputInt = new int[inputStr.length];
+    	
+    	for (int i=0; i<inputStr.length; i++) {
+    		inputInt[i] = Integer.parseInt(inputStr[i]);
+    	}
+    	
+    	Result cResult = new Result();
+    	int answer = cResult.PermCheck(inputInt);
+    	System.out.print(answer);
+    }
+    
+    /*
+     * https://app.codility.com/programmers/lessons/5-prefix_sums/count_div/
+     */
+    public void process_CountDiv() throws IOException {
+    	BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    	String[] inputStr = bufferedReader.readLine().split(" ");
+    	
+    	Result cResult = new Result();
+    	int answer = cResult.CountDiv(Integer.parseInt(inputStr[0]), Integer.parseInt(inputStr[1]), 
+    			Integer.parseInt(inputStr[2]));
+    	System.out.print(answer);
+    }
 }

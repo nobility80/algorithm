@@ -4,6 +4,11 @@ import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Result {
     public static int diagonalDifference(List<List<Integer>> arr) {
@@ -104,4 +109,81 @@ public class Result {
     	System.out.println(biResult.toString());
 
     }
+    
+    public int[] MaxCounters(int N, int[] A) {
+    	int[] answer = new int[N];
+    	int stan = 0;
+    	
+    	for (int i=0; i<A.length; i++) {
+    		if (A[i] == N+1) {
+    			// find max number
+    			for (int j=0; j<N; j++) {
+    				if (answer[j] > stan) stan = answer[j];
+    			}
+    			// save max number in all of array if A[i] == N+1
+    			for (int j=0; j<N; j++) {
+    				answer[j] = stan;
+    			}
+    		} else if ((A[i]>=1) && (A[i]<=N)) {
+    			answer[A[i]-1]++;
+    		}
+    	}
+    	
+    	return answer;
+    }
+    
+    public int MissingInteger(int[] A) {
+    	int answer = 1;
+    	Set<Integer> set = new HashSet<>();
+    	for (int i=0; i<A.length; i++) {
+    		set.add(A[i]);
+    	}
+    	
+    	ArrayList<Integer> list = new ArrayList<>(set);
+    	Collections.sort(list);
+
+    	Iterator<Integer> it2 = list.iterator();
+    	while(it2.hasNext()) {
+    		if (it2.next() == answer) {
+    			answer++;
+    		}
+    	}
+
+    	return answer;
+    }
+    
+    public int PermCheck(int[] A) {
+    	ArrayList<Integer> list = new ArrayList<>();
+    	int answer = 1;
+    	
+    	for (int i : A) {
+    		list.add(i);
+    	}
+    	
+    	Collections.sort(list);
+    	
+    	for (int i : list) {
+    		if (answer == i) answer++;
+    		else return 0;
+    	}
+    	
+    	return 1;
+    }
+    
+    public int CountDiv(int A, int B, int K) {
+    	int answer = 0;
+    	
+    	int i = A;
+    	while(i<=B) {
+    		if (i%K == 0) {
+    			answer++;
+    			i+=K;
+    		} else {
+    			i++;
+    		}
+    	}
+    	
+    	return answer;
+    }
+    
 }
