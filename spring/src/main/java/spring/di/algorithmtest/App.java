@@ -46,7 +46,8 @@ public class App
       //hackerRankSolution.process_MaxCounters();
       //hackerRankSolution.process_MissingInteger();
       //hackerRankSolution.process_PermCheck();
-      hackerRankSolution.process_CountDiv();
+      //hackerRankSolution.process_CountDiv();
+      hackerRankSolution.process_GenomicRangeQuery();
 
 //      System.out.println("res: " + res);
     }

@@ -258,4 +258,42 @@ public class HackerRankSolution {
     			Integer.parseInt(inputStr[2]));
     	System.out.print(answer);
     }
+    
+    /*
+     * https://app.codility.com/programmers/lessons/5-prefix_sums/genomic_range_query/
+     */
+    public void process_GenomicRangeQuery() throws IOException {
+    	BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    	String dna_seq = bufferedReader.readLine();
+    	String[] firstStr = bufferedReader.readLine().split(" ");
+    	String[] secondStr = bufferedReader.readLine().split(" ");
+    	int[] firstInt = new int[firstStr.length];
+    	int[] secondInt = new int[secondStr.length];
+    	
+    	for (int i=0; i<firstStr.length; i++) {
+    		firstInt[i] = Integer.parseInt(firstStr[i]);
+    		secondInt[i] = Integer.parseInt(secondStr[i]);
+    	}
+    	
+    	Result cResult = new Result();
+    	int[] answer = cResult.GenomicRangeQuery(dna_seq, firstInt, secondInt);
+    	System.out.print(answer);
+    }
+    
+    /*
+     * https://app.codility.com/programmers/lessons/5-prefix_sums/min_avg_two_slice/
+     */
+    public void process_MinAvgTwoSlice() throws IOException {
+    	BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    	String[] inputStr = bufferedReader.readLine().split(" ");
+    	int[] inputInt = new int[inputStr.length];
+    	
+    	for (int i=0; i<inputStr.length; i++) {
+    		inputInt[i] = Integer.parseInt(inputStr[i]);
+    	}
+
+    	Result cResult = new Result();
+    	int answer = cResult.MinAvgTwoSlice(inputInt);
+    	System.out.print(answer);
+    }
 }

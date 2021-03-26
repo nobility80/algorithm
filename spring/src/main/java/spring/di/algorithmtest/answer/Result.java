@@ -8,6 +8,7 @@ import java.util.Set;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 public class Result {
@@ -186,4 +187,42 @@ public class Result {
     	return answer;
     }
     
+    public int getSmallNumber(String S, int P, int Q) {
+    	Set<Integer> set = new HashSet<>();
+    	char[] charS = S.toCharArray();
+    	int start = 0;
+    	int end = 0;
+    	int answer = 1;
+    	
+    	if (P>Q) { start=Q;end=P; }
+    	else {start=P;end=Q;}
+    	
+    	for (int i=start; i<=end; i++ ) {
+    		if (charS[i] == 'A') set.add(1);
+    		else if (charS[i] == 'C') set.add(2);
+    		else if (charS[i] == 'G') set.add(3);
+    		else if (charS[i] == 'T') set.add(4);
+    	}
+    	
+    	ArrayList<Integer> list = new ArrayList<>(set);
+    	Collections.sort(list);
+    	
+    	return list.get(0);
+    }
+    
+    public int[] GenomicRangeQuery(String S, int[] P, int[] Q) {
+    	int [] answer = new int[P.length];
+    	
+    	for (int i=0; i<P.length; i++) {
+    		answer[i] = getSmallNumber(S, P[i], Q[i]);
+    		System.out.print("answer["+i+"]:" + answer[i]);
+    	}
+    	
+    	return answer;
+    	
+    }
+    
+    public int MinAvgTwoSlice(int[] A) {
+    	ArrayList<Integer> list = new ArrayList<>(Arrays.asList(A));
+    }
 }
