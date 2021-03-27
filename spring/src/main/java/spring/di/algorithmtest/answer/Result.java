@@ -223,6 +223,72 @@ public class Result {
     }
     
     public int MinAvgTwoSlice(int[] A) {
-    	ArrayList<Integer> list = new ArrayList<>(Arrays.asList(A));
+    	int position = 0;
+    	double average = Double.MAX_VALUE;
+    	
+    	for (int i=0; i<A.length-2; i++) {
+    		double avg2 = (A[i] + A[i+1])/2.0;
+    		double avg3 = (A[i] + A[i+1] + A[i+2])/3.0;
+    		if (average > Math.min(avg2, avg3)) {
+    			average = Math.min(avg2, avg3);
+    			position = i;
+    		}
+    	}
+    	
+    	if (average > (A[A.length-2]+A[A.length-1])/2.0 ) {
+    		average = (A[A.length-2]+A[A.length-1])/2.0;
+    		position = A.length-2;
+    	}
+    	
+    	return position;
     }
+    
+    public int PassingCars(int[] A) {
+    	int count_zero = 0;
+    	int answer = 0;
+    	
+    	//if there is no car heading east at the beginning of the array
+    	//if there is no car heading west at the end of the array
+    	for (int i=0; i<A.length; i++) {
+    		if (A[i] == 0) {
+    			count_zero++;
+    		} if (A[i] == 1) answer = answer+count_zero;
+    	}
+    	
+    	if ( (answer > 1000000000) || (answer < 0)) return -1;
+    	
+    	return answer;
+    }
+    
+    public int Distinct(int[] A) {
+    	Set<Integer> set = new HashSet<>();
+    	
+    	for (int i=0; i<A.length; i++) {
+    		set.add(A[i]);
+    	}
+    	
+    	return set.size();
+    }
+    
+    public int MaxProductOfThree(int[] A) {
+    	int answer = 0;
+    	ArrayList<Integer> list = new ArrayList<>();
+    	
+    	for (int i=0; i<A.length; i++) {
+    		list.add(A[i]);
+    	}
+    	
+    	Collections.sort(list);
+    	
+    	if (list.get(list.size()-1) < 0) {	// if all numbers are minus?
+    		answer = list.get(list.size()-3) * list.get(list.size()-2) * list.get(list.size()-1);
+    	} else if ((list.get(0) * list.get(1)) >= (list.get(list.size()-3) * list.get(list.size()-2))) {    	//best case is max numbers with (-) minus and (+) plus
+    		answer = list.get(0) * list.get(1) * list.get(list.size()-1);
+    	} else {
+    		answer = list.get(list.size()-3) * list.get(list.size()-2) * list.get(list.size()-1);
+    	}
+    	
+    	return answer;
+    }
+    
 }

@@ -296,4 +296,55 @@ public class HackerRankSolution {
     	int answer = cResult.MinAvgTwoSlice(inputInt);
     	System.out.print(answer);
     }
+    
+    /*
+     * https://app.codility.com/programmers/lessons/5-prefix_sums/passing_cars/
+     */
+    public void process_PassingCars() throws IOException {
+    	BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    	String[] inputStr = bufferedReader.readLine().split(" ");
+    	int[] inputInt = new int[inputStr.length];
+    	
+    	for (int i=0; i<inputStr.length; i++) {
+    		inputInt[i] = Integer.parseInt(inputStr[i]);
+    	}
+
+    	Result cResult = new Result();
+    	int answer = cResult.PassingCars(inputInt);
+    	System.out.print(answer);
+    }
+    
+    /*
+     * https://app.codility.com/programmers/lessons/6-sorting/distinct/
+     */
+    public void process_Distinct() throws IOException {
+    	BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    	String[] inputStr = bufferedReader.readLine().split(" ");
+    	int[] inputInt = new int[inputStr.length];
+    	
+    	for (int i=0; i<inputStr.length; i++) {
+    		inputInt[i] = Integer.parseInt(inputStr[i]);
+    	}
+
+    	Result cResult = new Result();
+    	int answer = cResult.Distinct(inputInt);
+    	System.out.print(answer);
+    }
+    
+    /*
+     * https://app.codility.com/programmers/lessons/6-sorting/max_product_of_three/
+     */
+    public void process_MaxProductOfThree() throws IOException {
+    	BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    	String[] inputStr = bufferedReader.readLine().split(" ");
+    	int[] inputInt = new int[inputStr.length];
+    	
+    	for (int i=0; i<inputStr.length; i++) {
+    		inputInt[i] = Integer.parseInt(inputStr[i]);
+    	}
+
+    	Result cResult = new Result();
+    	int answer = cResult.MaxProductOfThree(inputInt);
+    	System.out.print(answer);
+    }
 }

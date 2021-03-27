@@ -47,7 +47,11 @@ public class App
       //hackerRankSolution.process_MissingInteger();
       //hackerRankSolution.process_PermCheck();
       //hackerRankSolution.process_CountDiv();
-      hackerRankSolution.process_GenomicRangeQuery();
+      //hackerRankSolution.process_GenomicRangeQuery();
+      //hackerRankSolution.process_MinAvgTwoSlice();
+      //hackerRankSolution.process_PassingCars();
+      //hackerRankSolution.process_Distinct();
+      hackerRankSolution.process_MaxProductOfThree();
 
 //      System.out.println("res: " + res);
     }
