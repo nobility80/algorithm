@@ -291,4 +291,20 @@ public class Result {
     	return answer;
     }
     
+    public int NumberOfDiscIntersections(int[] A) {
+    	int answer = 0;
+    	
+    	for (int i=0; i<A.length-1; i++) {
+    		for (int j=i+1; j<A.length; j++ ) {
+    			if ((j-A[j]) <= ((long)i+A[i])) {	// circle J is right closed at the edge of circle I
+					answer++;
+    			}
+    		}
+    	}
+    	
+    	if (answer>10000000) return -1;
+    	
+    	return answer;
+    }
+    
 }

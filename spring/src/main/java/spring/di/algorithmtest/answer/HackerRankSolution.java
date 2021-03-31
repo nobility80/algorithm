@@ -347,4 +347,21 @@ public class HackerRankSolution {
     	int answer = cResult.MaxProductOfThree(inputInt);
     	System.out.print(answer);
     }
+    
+    /*
+     * https://app.codility.com/programmers/lessons/6-sorting/number_of_disc_intersections/
+     */
+    public void process_NumberOfDiscIntersections() throws IOException {
+    	BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    	String[] inputStr = bufferedReader.readLine().split(" ");
+    	int[] inputInt = new int[inputStr.length];
+    	
+    	for (int i=0; i<inputStr.length; i++) {
+    		inputInt[i] = Integer.parseInt(inputStr[i]);
+    	}
+
+    	Result cResult = new Result();
+    	int answer = cResult.NumberOfDiscIntersections(inputInt);
+    	System.out.print(answer);
+    }
 }
