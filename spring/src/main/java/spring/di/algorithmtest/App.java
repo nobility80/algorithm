@@ -52,7 +52,9 @@ public class App
       //hackerRankSolution.process_PassingCars();
       //hackerRankSolution.process_Distinct();
       //hackerRankSolution.process_MaxProductOfThree();
-      hackerRankSolution.process_NumberOfDiscIntersections();
+      //hackerRankSolution.process_NumberOfDiscIntersections();
+      //hackerRankSolution.process_Triangle();
+      hackerRankSolution.process_Brackets();
 
 //      System.out.println("res: " + res);
     }

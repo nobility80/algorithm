@@ -364,4 +364,34 @@ public class HackerRankSolution {
     	int answer = cResult.NumberOfDiscIntersections(inputInt);
     	System.out.print(answer);
     }
+
+    /*
+     * https://app.codility.com/programmers/lessons/6-sorting/triangle/
+     */
+    public void process_Triangle() throws IOException {
+    	BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    	String[] inputStr = bufferedReader.readLine().split(" ");
+    	int[] inputInt = new int[inputStr.length];
+    	
+    	for (int i=0; i<inputStr.length; i++) {
+    		inputInt[i] = Integer.parseInt(inputStr[i]);
+    	}
+
+    	Result cResult = new Result();
+    	int answer = cResult.Triangle(inputInt);
+    	System.out.print(answer);
+    }
+    
+    /*
+     * https://app.codility.com/programmers/lessons/7-stacks_and_queues/brackets/
+     */
+    public void process_Brackets() throws IOException {
+    	BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    	String inputStr = bufferedReader.readLine();
+    	
+    	Result cResult = new Result();
+    	int answer = cResult.Brackets("''");
+    	//int answer = cResult.Brackets(inputStr);
+    	System.out.print(answer);
+    }
 }

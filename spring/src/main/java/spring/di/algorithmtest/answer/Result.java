@@ -10,6 +10,7 @@ import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Stack;
 
 public class Result {
     public static int diagonalDifference(List<List<Integer>> arr) {
@@ -307,4 +308,68 @@ public class Result {
     	return answer;
     }
     
+    public int Triangle(int[] A) {
+    	Arrays.sort(A);
+    	
+    	for (int i=0; i<A.length-2; i++) {
+			if ((long)A[i] + (long)A[i+1] > A[i+2])
+				return 1;
+    	}
+    	
+    	return 0;
+    }
+    
+    public int Brackets(String S) {
+    	Stack<Character> st = new Stack<>();
+    	char last_ch;
+    	
+    	for (char c: S.toCharArray()) {
+    		if ((c == '[') || (c == '(') || (c == '{'))
+    			st.push(c);
+    		else {
+    			if (st.empty()) return 0;
+    			last_ch = st.pop();
+    			
+    			if ((c == ']') && (last_ch != '[')) return 0;
+    			else if ((c == '}') && (last_ch != '{')) return 0;
+    			else if ((c == ')') && (last_ch != '(')) return 0;
+    		}
+    	}
+    	
+    	return st.isEmpty()? 1: 0;
+//    	int small_f = 0;
+//    	int middle_f = 0;
+//    	int large_f = 0;
+//    	char[] charS = S.toCharArray();
+//    	
+//    	for (int i=0; i<charS.length; i++) {
+//    		if (charS[i] == '[') large_f++;
+//    		else if (charS[i] == ']') {
+//    			if (charS[i-1] == '[')
+//    				large_f--;
+//    			else if ((charS[i-1] == '}') || (charS[i-1] == ')'))
+//    				large_f--;
+//    		}
+//    		else if (charS[i] == '{') middle_f++;
+//    		else if (charS[i] == '}') {
+//    			if (charS[i-1] == '{')
+//    				middle_f--;
+//    			else if ((charS[i-1] == ']') || (charS[i-1] == ')'))
+//    				middle_f--;
+//    		}
+//
+//    		else if (charS[i] == '(') small_f++;
+//    		else if (charS[i] == ')') {
+//    			if (charS[i-1] == '(')
+//    				small_f--;
+//    			else if ((charS[i-1] == ']') || (charS[i-1] == '}'))
+//    				small_f--;
+//    		}
+//    		
+//    		if ((i == charS.length-1) && (large_f == 0) && (middle_f == 0) && (small_f == 0))
+//    			return 1;
+//    	}
+//    	
+    	return 0;
+    }
 }
