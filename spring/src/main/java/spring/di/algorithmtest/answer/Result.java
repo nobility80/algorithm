@@ -337,39 +337,23 @@ public class Result {
     	}
     	
     	return st.isEmpty()? 1: 0;
-//    	int small_f = 0;
-//    	int middle_f = 0;
-//    	int large_f = 0;
-//    	char[] charS = S.toCharArray();
-//    	
-//    	for (int i=0; i<charS.length; i++) {
-//    		if (charS[i] == '[') large_f++;
-//    		else if (charS[i] == ']') {
-//    			if (charS[i-1] == '[')
-//    				large_f--;
-//    			else if ((charS[i-1] == '}') || (charS[i-1] == ')'))
-//    				large_f--;
-//    		}
-//    		else if (charS[i] == '{') middle_f++;
-//    		else if (charS[i] == '}') {
-//    			if (charS[i-1] == '{')
-//    				middle_f--;
-//    			else if ((charS[i-1] == ']') || (charS[i-1] == ')'))
-//    				middle_f--;
-//    		}
-//
-//    		else if (charS[i] == '(') small_f++;
-//    		else if (charS[i] == ')') {
-//    			if (charS[i-1] == '(')
-//    				small_f--;
-//    			else if ((charS[i-1] == ']') || (charS[i-1] == '}'))
-//    				small_f--;
-//    		}
-//    		
-//    		if ((i == charS.length-1) && (large_f == 0) && (middle_f == 0) && (small_f == 0))
-//    			return 1;
-//    	}
-//    	
-    	return 0;
+    }
+    
+    public int Nesting(String S) {
+    	int answer = 0;
+    	Stack<Character> stack = new Stack<>();
+    	char[] charS = S.toCharArray();
+    	
+    	for (char ch : charS) {
+    		if (ch == '(') {
+    			stack.push(ch);
+    		} else {
+    			if (stack.isEmpty()) return 0;
+    			
+    			char last_ch = stack.pop();
+    		}
+    	}
+    	
+    	return stack.isEmpty()? 1: 0;
     }
 }

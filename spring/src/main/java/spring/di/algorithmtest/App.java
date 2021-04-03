@@ -54,7 +54,8 @@ public class App
       //hackerRankSolution.process_MaxProductOfThree();
       //hackerRankSolution.process_NumberOfDiscIntersections();
       //hackerRankSolution.process_Triangle();
-      hackerRankSolution.process_Brackets();
+      //hackerRankSolution.process_Brackets();
+      hackerRankSolution.process_Nesting();
 
 //      System.out.println("res: " + res);
     }

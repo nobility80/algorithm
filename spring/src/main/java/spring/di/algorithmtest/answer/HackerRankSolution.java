@@ -394,4 +394,14 @@ public class HackerRankSolution {
     	//int answer = cResult.Brackets(inputStr);
     	System.out.print(answer);
     }
+    
+    public void process_Nesting() throws IOException {
+    	BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    	String inputStr = bufferedReader.readLine();
+    	
+    	Result cResult = new Result();
+    	int answer = cResult.Brackets(inputStr);
+    	System.out.print(answer);
+    }
+    
 }
