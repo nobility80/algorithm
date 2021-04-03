@@ -356,4 +356,38 @@ public class Result {
     	
     	return stack.isEmpty()? 1: 0;
     }
+    
+    public int stone_wall(int[] H) {
+    	Stack<Integer> stack = new Stack<>();
+    	int nHead = 0;
+    	int block_count = 0;
+    	int m = 0;
+    	
+    	for (int a : H) {
+    		if (a > nHead) {
+    			stack.push(a);
+    		} else if (a < nHead) {
+    			while(((stack.size() > 0) && (m = stack.pop()) > a)) {
+    				block_count++;
+    			}
+    			if (m < a) stack.push(m);
+    			if (a > 0) stack.push(a);
+    		}
+			nHead = a;
+    	}
+    	
+    	while(stack.size() > 0) {
+    		m = stack.pop();
+    		if ((m == nHead) && (stack.size() > 0)) {
+    			m = stack.pop();
+    		}
+    		
+    		if (m < nHead) {
+    			block_count++;
+    		}
+    	}
+    	block_count++;
+    	
+    	return block_count;
+    }
 }

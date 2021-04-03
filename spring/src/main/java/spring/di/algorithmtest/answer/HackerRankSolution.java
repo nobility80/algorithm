@@ -395,6 +395,9 @@ public class HackerRankSolution {
     	System.out.print(answer);
     }
     
+    /*
+     * https://app.codility.com/programmers/lessons/7-stacks_and_queues/nesting/
+     */
     public void process_Nesting() throws IOException {
     	BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
     	String inputStr = bufferedReader.readLine();
@@ -404,4 +407,22 @@ public class HackerRankSolution {
     	System.out.print(answer);
     }
     
+    /*
+     * https://app.codility.com/programmers/lessons/7-stacks_and_queues/stone_wall/
+     */
+    public void process_stone_wall() throws IOException {
+    	//BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    	//String[] inputStr = bufferedReader.readLine().split(" ");
+    	//int[] inputInt = new int[inputStr.length];
+    	//int[] inputInt = {8, 8, 5, 7, 9, 8, 7, 4, 8};
+    	int[] inputInt = {1};
+    	
+    	//for (int i=0; i<inputStr.length; i++) {
+//    		inputInt[i] = Integer.parseInt(inputStr[i]);
+    	//}
+
+    	Result cResult = new Result();
+    	int answer = cResult.stone_wall(inputInt);
+    	System.out.print(answer);
+    }
 }

@@ -55,7 +55,8 @@ public class App
       //hackerRankSolution.process_NumberOfDiscIntersections();
       //hackerRankSolution.process_Triangle();
       //hackerRankSolution.process_Brackets();
-      hackerRankSolution.process_Nesting();
+      //hackerRankSolution.process_Nesting();
+      hackerRankSolution.process_stone_wall();
 
 //      System.out.println("res: " + res);
     }
