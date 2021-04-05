@@ -395,6 +395,24 @@ public class HackerRankSolution {
     	System.out.print(answer);
     }
     
+    public void process_Fish() throws IOException {
+	    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+	    String[] groupA = bufferedReader.readLine().split(" ");
+	    String[] groupB = bufferedReader.readLine().split(" ");
+	    int[] groupAInt = new int[groupA.length];
+	    int[] groupBInt = new int[groupB.length];
+
+	    for (int i=0; i<groupA.length; i++) {
+		    groupAInt[i] = Integer.parseInt(groupA[i]);
+		    groupBInt[i] = Integer.parseInt(groupB[i]);
+	    }
+
+    	Result cResult = new Result();
+    	int answer = cResult.Fish(groupAInt, groupBInt);
+    	System.out.print(answer);
+    }
+
+    
     /*
      * https://app.codility.com/programmers/lessons/7-stacks_and_queues/nesting/
      */
