@@ -339,6 +339,27 @@ public class Result {
     	return st.isEmpty()? 1: 0;
     }
     
+    public int Fish(int[] A, int[] B) {
+    	int answer = 0;
+    	Stack<Integer> stackA = new Stack<>();
+    	int a = 0;
+
+    	for (int i=0; i<A.length; i++) {
+    		if (B[i] == 1) stackA.push(A[i]);
+    		else {
+    			if (!stackA.isEmpty())
+    				a = stackA.pop();
+
+    			if (A[i] > a) answer++;
+    		}
+    	}
+	
+    	answer+=stackA.size();
+	
+    	return answer;
+	}
+
+    
     public int Nesting(String S) {
     	int answer = 0;
     	Stack<Character> stack = new Stack<>();
