@@ -463,18 +463,36 @@ public class HackerRankSolution {
      * https://app.codility.com/programmers/lessons/8-leader/equi_leader/
      */
     public void process_equi_leader() throws IOException {
-//    	BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-//    	String[] inputStr = bufferedReader.readLine().split(" ");
-//    	int[] inputInt = new int[inputStr.length];
-    	int[] inputInt = {4,3,4,4,4,2};
-//    	int[] inputInt = {4,4,2,5,3,4,4,4};
+    	BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    	String[] inputStr = bufferedReader.readLine().split(" ");
+    	int[] inputInt = new int[inputStr.length];
     	
-//    	for (int i=0; i<inputStr.length; i++) {
-//    		inputInt[i] = Integer.parseInt(inputStr[i]);
-//    	}
+    	for (int i=0; i<inputStr.length; i++) {
+    		inputInt[i] = Integer.parseInt(inputStr[i]);
+    	}
 
     	Result cResult = new Result();
     	int answer = cResult.equi_leader(inputInt);
+    	System.out.print(answer);
+    }
+    
+    /*
+     * https://app.codility.com/programmers/lessons/9-maximum_slice_problem/max_double_slice_sum/
+     */
+    public void process_max_double_slice_sum() throws IOException {
+//    	BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+//    	String[] inputStr = bufferedReader.readLine().split(" ");
+//    	int[] inputInt = new int[inputStr.length];
+//    	
+//    	for (int i=0; i<inputStr.length; i++) {
+//    		inputInt[i] = Integer.parseInt(inputStr[i]);
+//    	}
+//    	int[] inputInt = {3, 2, 6, -1, 4, 5, -1, 2};
+//    	int[] inputInt = {0, 10, -5, -2, 0};
+    	int[] inputInt = {-8, 10, 20, -5, -7, -4};
+
+    	Result cResult = new Result();
+    	int answer = cResult.max_double_slice_sum(inputInt);
     	System.out.print(answer);
     }
 }

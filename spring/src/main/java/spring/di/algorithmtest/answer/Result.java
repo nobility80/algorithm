@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -473,5 +474,59 @@ public class Result {
     	}
     	
     	return answer;
+    }
+    
+    public int max_double_slice_sum(int[] A) {
+    	int current_answer = 0;
+    	int optimized_answer = 0;
+    	int jump_number = 100000;
+    	
+    	for (int i=1; i<A.length-1; i++) {
+    		current_answer+=A[i];
+    		if (current_answer < 0) {
+    			current_answer = 0;
+    			optimized_answer = 0;
+    			jump_number = 0;
+    		}
+    		
+    		if (A[i] < jump_number)
+    			jump_number = A[i];
+    		
+    		if (A[i-1] == jump_number)
+    			optimized_answer+=jump_number;
+    		
+    		if (optimized_answer < current_answer)
+    			optimized_answer = current_answer;
+    	}
+    	
+    	return optimized_answer - jump_number;
+//    	Map<Integer, Map<Integer, Integer>> map = new LinkedHashMap<>();
+//    	int start = 0;
+//    	int optimized_answer = 0;
+//    	int current_answer = 0;
+//    	int jump_number = 100000;
+//    	map.put(0, new LinkedHashMap<Integer, Integer>()).put(0, 0);
+//    	for (int i = 1; i<A.length-1; i++) {
+//    		if (start == -1) {
+//    			start = i;
+//    			map.put(start, new LinkedHashMap<Integer, Integer>()).put(0, 0);
+//    		}
+//    		current_answer+=A[i];
+//    		if (current_answer < 0) {
+//    			current_answer = 0;
+//    			map.put(start, new LinkedHashMap<Integer, Integer>()).put(jump_number, i);
+//    			optimized_answer+=jump_number;
+//    			jump_number = 100000;
+//    			start = -1;
+//    			continue;
+//    		}
+//    		if (A[i] < jump_number)
+//    			jump_number = A[i];
+//    			
+//    		if (optimized_answer < current_answer)
+//    			optimized_answer = current_answer;			
+//    	}
+//    	
+//    	return optimized_answer;
     }
 }
