@@ -56,7 +56,9 @@ public class App
       //hackerRankSolution.process_Triangle();
       //hackerRankSolution.process_Brackets();
       //hackerRankSolution.process_Nesting();
-      hackerRankSolution.process_stone_wall();
+      //hackerRankSolution.process_stone_wall();
+      //hackerRankSolution.process_dominator();
+      hackerRankSolution.process_equi_leader();
 
 //      System.out.println("res: " + res);
     }

@@ -411,18 +411,52 @@ public class HackerRankSolution {
      * https://app.codility.com/programmers/lessons/7-stacks_and_queues/stone_wall/
      */
     public void process_stone_wall() throws IOException {
-    	//BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-    	//String[] inputStr = bufferedReader.readLine().split(" ");
-    	//int[] inputInt = new int[inputStr.length];
-    	//int[] inputInt = {8, 8, 5, 7, 9, 8, 7, 4, 8};
-    	int[] inputInt = {1};
+    	BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    	String[] inputStr = bufferedReader.readLine().split(" ");
+    	int[] inputInt = new int[inputStr.length];
     	
-    	//for (int i=0; i<inputStr.length; i++) {
-//    		inputInt[i] = Integer.parseInt(inputStr[i]);
-    	//}
+    	for (int i=0; i<inputStr.length; i++) {
+    		inputInt[i] = Integer.parseInt(inputStr[i]);
+    	}
 
     	Result cResult = new Result();
     	int answer = cResult.stone_wall(inputInt);
+    	System.out.print(answer);
+    }
+    
+    /*
+     * https://app.codility.com/programmers/lessons/8-leader/dominator/
+     */
+    public void process_dominator() throws IOException {
+    	BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    	String[] inputStr = bufferedReader.readLine().split(" ");
+    	int[] inputInt = new int[inputStr.length];
+    	
+    	for (int i=0; i<inputStr.length; i++) {
+    		inputInt[i] = Integer.parseInt(inputStr[i]);
+    	}
+
+    	Result cResult = new Result();
+    	int answer = cResult.dominator(inputInt);
+    	System.out.print(answer);
+    }
+    
+    /*
+     * https://app.codility.com/programmers/lessons/8-leader/equi_leader/
+     */
+    public void process_equi_leader() throws IOException {
+//    	BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+//    	String[] inputStr = bufferedReader.readLine().split(" ");
+//    	int[] inputInt = new int[inputStr.length];
+    	int[] inputInt = {4,3,4,4,4,2};
+//    	int[] inputInt = {4,4,2,5,3,4,4,4};
+    	
+//    	for (int i=0; i<inputStr.length; i++) {
+//    		inputInt[i] = Integer.parseInt(inputStr[i]);
+//    	}
+
+    	Result cResult = new Result();
+    	int answer = cResult.equi_leader(inputInt);
     	System.out.print(answer);
     }
 }

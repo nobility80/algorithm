@@ -390,4 +390,67 @@ public class Result {
     	
     	return block_count;
     }
+    
+    public int dominator(int[] A) {
+    	Map<Integer, Integer> map = new HashMap<>();
+    	int dom_value = 0;
+    	
+    	if (A.length == 0) return -1;
+    	
+    	for (int a: A) {
+    		if (!map.containsKey(a)) {
+    			map.put(a, 1);
+    		} else {
+    			map.put(a, map.get(a)+1);
+    		}
+    	}
+    	
+    	for (int a : map.keySet()) {
+    		if (map.get(a) > A.length/2) {
+    			dom_value = a;
+    			break;
+    		}
+    	}
+    	
+    	for (int i=0; i<A.length; i++) {
+    		if (A[i] == dom_value)
+    			return i;
+    	}
+    	
+    	return -1;
+    }
+    
+    public int equi_leader(int[] A) {
+    	Map<Integer, Integer> map = new HashMap<>();
+    	int leader = -1;
+    	int count_leader = 0;
+    	int count = 0;
+    	int answer = 0;
+    	    	
+    	//create map
+    	for (int a:A) {
+    		if (!map.containsKey(a))
+    			map.put(a, 1);
+    		else
+    			map.put(a, map.get(a)+1);
+    	}
+    	
+    	//getting the leader of the group
+    	for (int a:map.keySet()) {
+    		if (map.get(a) > count_leader) {
+    			leader = a;
+    			count_leader = map.get(a);
+    		}
+    	}
+    	
+    	//spliting groups having leaders
+    	for (int i = 0; i<A.length-1; i++) {
+    		if (A[i] == leader) count++;
+			if (((count*100/(i+1)) > 50) && (((count_leader-count)*100/(A.length-i-1)) > 50)) {
+				answer++;
+			}
+    	}
+    	
+    	return answer;
+    }
 }
