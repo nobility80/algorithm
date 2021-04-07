@@ -495,4 +495,47 @@ public class HackerRankSolution {
     	int answer = cResult.max_double_slice_sum(inputInt);
     	System.out.print(answer);
     }
+    
+    /*
+     * https://app.codility.com/programmers/lessons/9-maximum_slice_problem/max_profit/
+     */
+    public void process_max_profit() throws IOException {
+//    	BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+//    	String[] inputStr = bufferedReader.readLine().split(" ");
+//    	int[] inputInt = new int[inputStr.length];
+//    	
+//    	for (int i=0; i<inputStr.length; i++) {
+//    		inputInt[i] = Integer.parseInt(inputStr[i]);
+//    	}
+
+    	int[] inputInt = {23171, 21011, 21123, 21366, 21013, 21367}; 
+    			
+    	Result cResult = new Result();
+    	int answer = cResult.max_profit(inputInt);
+    	System.out.print(answer);
+    }
+    
+    /*
+     * https://app.codility.com/programmers/lessons/9-maximum_slice_problem/max_slice_sum/
+     */
+    public void process_max_slice_sum() throws IOException {
+//    	BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+//    	String[] inputStr = bufferedReader.readLine().split(" ");
+//    	int[] inputInt = new int[inputStr.length];
+//    	
+//    	for (int i=0; i<inputStr.length; i++) {
+//    		inputInt[i] = Integer.parseInt(inputStr[i]);
+//    	}
+
+    	int[] inputInt = {3, 2, -6, 4, 0};
+//    	int[] inputInt = {-2, 1}; 
+//    	int[] inputInt = {1, 1};
+//    	int[] inputInt = {1, 3};
+//    	int[] inputInt = {-2, 1, 1};
+//    	int[] inputInt = {1, 3, -5, 3, 7, 14, 29};
+    			
+    	Result cResult = new Result();
+    	int answer = cResult.max_slice_sum(inputInt);
+    	System.out.print(answer);
+    }
 }

@@ -529,4 +529,63 @@ public class Result {
 //    	
 //    	return optimized_answer;
     }
+    
+    public int max_profit(int[] A) {
+    	if ((A.length == 1) || (A.length == 0)) return 0;
+    	
+    	int min_value = A[0];
+    	int max_value = 0;
+    	
+    	for (int i=1; i<A.length; i++) {
+    		if (A[i] < min_value) min_value = A[i];
+    		max_value = Math.max(max_value, (A[i]-min_value));
+    	}
+    	
+    	if (max_value < 0) return 0;
+    	
+    	return max_value;
+    }
+    
+    public int max_slice_sum(int[] A) {
+    	long max_value = A[0];
+    	int result = A[0];
+    	boolean max_value_minus = false;
+    	for (int i=1; i<A.length; i++) {
+    		max_value+=A[i];
+    		if (result < max_value) {
+    			if (max_value >= A[i]) {
+    				result = (int) max_value;
+    			} else {
+    				result = A[i];
+    				max_value = A[i];
+    			}
+    		} else {
+    			if (max_value < 0) {
+    				max_value_minus = true;
+    			}
+    			if ((result < A[i]) && (max_value_minus == true)) {
+    				result = A[i];
+    				max_value = A[i];
+    			} else if ((result > A[i]) && (max_value_minus == true)){
+    				max_value = 0;
+    				max_value_minus = false;
+    			}
+    		}
+    	}
+    	return result;
+//    	long max_value = A[0];
+//    	int result = A[0];
+//    	for (int i=1; i<A.length; i++) {
+//    		max_value+=A[i];
+//    		if (result < max_value)
+//    			result = (int) max_value;
+//    		else {
+//    			if (result < A[i]) {
+//    				result = A[i];
+//    				max_value = A[i];
+//    			}
+//    		}
+//    	}
+//    	return result;
+    }
 }
