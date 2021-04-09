@@ -548,7 +548,7 @@ public class Result {
     
     public int max_slice_sum(int[] A) {
     	long max_value = A[0];
-    	int result = A[0];
+    	int result = A[0];		//result is a sum of  max_value and A[i]
     	boolean max_value_minus = false;
     	for (int i=1; i<A.length; i++) {
     		max_value+=A[i];
@@ -563,9 +563,12 @@ public class Result {
     			if (max_value < 0) {
     				max_value_minus = true;
     			}
+    			// if total sum is minus and A[i] is more than the result
     			if ((result < A[i]) && (max_value_minus == true)) {
     				result = A[i];
     				max_value = A[i];
+    			//if result is more than A[i] and max_value becomes minus because A[i] is big minus number
+    			//the max_value will be newly calculated and result will be kept without any more calculation.
     			} else if ((result > A[i]) && (max_value_minus == true)){
     				max_value = 0;
     				max_value_minus = false;
@@ -573,19 +576,33 @@ public class Result {
     		}
     	}
     	return result;
-//    	long max_value = A[0];
-//    	int result = A[0];
-//    	for (int i=1; i<A.length; i++) {
-//    		max_value+=A[i];
-//    		if (result < max_value)
-//    			result = (int) max_value;
-//    		else {
-//    			if (result < A[i]) {
-//    				result = A[i];
-//    				max_value = A[i];
-//    			}
-//    		}
-//    	}
-//    	return result;
+    }
+    
+    public int max_count_factors(int N) {
+    	Set<Integer> set = new HashSet<>();
+    	for (int i=1; i<=Math.sqrt(N); i++) {
+    		if (N%i == 0) {
+    			set.add(i);
+    			set.add(N/i);
+    		}
+    	}
+    	return set.size();
+    }
+
+    public int flags(int[] A) {
+    	int index=0;
+    	int previous_peak = 0;
+    	ArrayList<Integer> list = new ArrayList<>();
+    	for (int i=1; i<A.length-1; i++) {
+    		if ((A[i]>A[i-1]) && (A[i] > A[i+1])) {
+    			index++;
+    			if ((i-previous_peak) >= index) {
+    				list.add(A[i]);
+    				previous_peak = i;
+    			}
+    		}
+    	}
+    	
+    	return list.size(); 
     }
 }

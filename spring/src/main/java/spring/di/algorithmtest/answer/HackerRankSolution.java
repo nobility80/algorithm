@@ -538,4 +538,44 @@ public class HackerRankSolution {
     	int answer = cResult.max_slice_sum(inputInt);
     	System.out.print(answer);
     }
+    
+    /*
+     * https://app.codility.com/programmers/lessons/10-prime_and_composite_numbers/count_factors/
+     */
+    public void process_count_factors() throws IOException {
+//    	BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+//    	String inputStr = bufferedReader.readLine();
+//    	int inputInt = Integer.parseInt(inputStr);
+
+//    	int inputInt = 24;
+//    	int inputInt = 27043111;
+//    	int inputInt = 39916800;
+    	int inputInt = 39992976;
+    			
+    	Result cResult = new Result();
+    	int answer = cResult.max_count_factors(inputInt);
+    	System.out.print(answer);
+    }
+
+    /*
+     * https://app.codility.com/programmers/lessons/10-prime_and_composite_numbers/flags/
+     */
+    public void process_flags() throws IOException {
+//    	BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+//    	String[] inputStr = bufferedReader.readLine().split(" ");
+//    	int[] inputInt = new int[inputStr.length];
+//    	
+//    	for (int i=0; i<inputStr.length; i++) {
+//    		inputInt[i] = Integer.parseInt(inputStr[i]);
+//    	}
+
+    	int[] inputInt = {1, 5, 3, 4, 3, 4, 1, 2, 3, 4, 6, 2};
+//    	int[] inputInt = {0, 0, 0, 0, 0, 1, 0, 1, 0, 1}; 
+    			
+    	Result cResult = new Result();
+    	int answer = cResult.flags(inputInt);
+    	System.out.print(answer);
+    }
+    
+
 }
