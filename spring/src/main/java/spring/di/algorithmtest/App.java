@@ -64,7 +64,8 @@ public class App
       //hackerRankSolution.process_max_profit();
       //hackerRankSolution.process_max_slice_sum();
       //hackerRankSolution.process_count_factors();
-      hackerRankSolution.process_flags();
+      //hackerRankSolution.process_flags();
+      hackerRankSolution.process_min_perimeter_rectangle();
 
 //      System.out.println("res: " + res);
     }

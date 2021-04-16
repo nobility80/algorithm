@@ -577,5 +577,19 @@ public class HackerRankSolution {
     	System.out.print(answer);
     }
     
+    /*
+    * https://app.codility.com/programmers/lessons/10-prime_and_composite_numbers/min_perimeter_rectangle/
+    */
+    public void process_min_perimeter_rectangle() throws IOException {
+    //     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    //     String inputStr = bufferedReader.readLine();
+    //     int inputStr = 1;
+    //     int inputStr = 30;
+    	int inputStr = 982451653; 
+    
+    	Result cResult = new Result();
+    	int answer = cResult.min_perimeter_rectangle(inputStr);
+    	System.out.print(answer);
+    }
 
 }

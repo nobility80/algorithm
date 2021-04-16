@@ -605,4 +605,17 @@ public class Result {
     	
     	return list.size(); 
     }
+    
+    public int min_perimeter_rectangle(int N) {
+    	int min_perimeter = 2000000000;
+    	for (int i=1; i<=Math.sqrt(N); i++) {
+    		if (N%i == 0) {
+    			if (min_perimeter > 2*(i+(N/i)))
+    				min_perimeter = 2*(i+(N/i));
+    		}
+        }
+    	
+    	return min_perimeter;
+    }
+
 }
